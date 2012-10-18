@@ -1,4 +1,4 @@
 Grafo-TDD
 =========
 
-Ejercicio para extender una base grafo basados en la generación de pruebas unitarias.
+Ejercicio para extender una clase grafo basados en la generación de pruebas unitarias.
