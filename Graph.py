@@ -73,11 +73,16 @@ class Graph(dict):
         self[v][w] = e
         self[w][v] = e
 
+    def get_edge(self, v1, v2):
+        try:
+            return self[v1][v2]
+        except KeyError:
+            return None
+
     def remove_edge( self, e ):
         v1, v2 = e
         self[v1].pop(v2)
         self[v2].pop(v1)
-
 
 def main(script, *args):
     v = Vertex('v')
