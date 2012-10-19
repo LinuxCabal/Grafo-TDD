@@ -73,6 +73,12 @@ class Graph(dict):
         self[v][w] = e
         self[w][v] = e
 
+    def get_edge(self, v1, v2):
+        try:
+            return self[v1][v2]
+        except KeyError:
+            return None
+
 
 def main(script, *args):
     v = Vertex('v')
