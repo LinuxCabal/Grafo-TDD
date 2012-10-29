@@ -84,6 +84,12 @@ class Graph(dict):
         self[v1].pop(v2)
         self[v2].pop(v1)
 
+    def vertices( self ):
+        vs = list()
+        for v in self:
+            vs.append( v.label )
+        return sorted(vs)
+
 def main(script, *args):
     v = Vertex('v')
     print v
@@ -93,7 +99,6 @@ def main(script, *args):
     print e
     g = Graph([v,w], [e])
     print g
-
 
 if __name__ == '__main__':
     import sys

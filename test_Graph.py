@@ -17,6 +17,21 @@ class GraphTest(unittest.TestCase):
         edge = self.g.get_edge(self.v, self.y)
         self.assertIsNone(edge)
 
+    def test_vertices_is_list(self):
+        ''' Verifica que el retorno de la funcion vertices sea una lista '''
+        vs = self.g.vertices()
+        self.assertEqual( list, type( vs ) )
+
+    def test_vertices_exist(self):
+        ''' Todos los vertices incluidos en la lista existen en el grafo '''
+        vs = ['v','w','x','y' ]
+        self.assertEqual( sorted(vs), self.g.vertices() )
+
+    def test_vertices_not_exist(self):
+        ''' El vertice z no existe en el grafo generado en setup() '''
+        vs =  ['v','w','x','y','z' ]
+        self.assertNotEqual( sorted(vs), self.g.vertices() )
+
     def test_get_edge_exist(self):
         edge = self.g.get_edge(self.v, self.w)
         self.assertEqual(edge, self.e)
