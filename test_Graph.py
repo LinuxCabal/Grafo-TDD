@@ -45,6 +45,16 @@ class GraphTest(unittest.TestCase):
         edge = self.g.remove_edge( self.e )
         self.assertIsNone( self.g.get_edge( self.v, self.w ) )
 
+    def test_vertex_repr(self):
+        self.assertEqual( repr(self.v), "Vertex('v')" )
+
+    def test_edge_one_vertex(self):
+        self.assertRaises( ValueError, Edge, self.v )
+
+    def test_edge_repr(self):
+        self.assertEqual( repr(self.e),
+                    "Edge(Vertex('v'), Vertex('w'))" )
+
 if __name__ == '__main__':
     unittest.main()
 
